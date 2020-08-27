@@ -1,0 +1,33 @@
+（1）环境搭建；
+下载https://github.com/tensorflow/models/blob/master/research/deeplab/g3doc/installation.md；
+tf_slim安装；
+cd 到slim文件夹下：
+运行python setup.py build
+python setup.py install
+(安装成功)
+
+测试环境：
+# From tensorflow/models/research/
+export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim
+
+# From tensorflow/models/research/
+python deeplab/model_test.py
+
+# From tensorflow/models/research/deeplab
+sh local_test.sh
+这一步花的时间比较久，可以先跑前面一条。
+
+（2）制作数据集；
+针对数据集格式做了修改，
+png_tfrecord.py
+（产生训练集和验证集对应的tfrecord文件）
+
+train\trainval\val数据集需要区分;
+标签从0开始，ignore标签另给；
+
+（3）网络修改；
+datasets描述、datasets名称
+
+（4）训练参数设置
+
+
